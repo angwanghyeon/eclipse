@@ -1,0 +1,30 @@
+package com.keduit.controller.action;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.keduit.dao.BoardDAO;
+import com.keduit.dto.BoardVo;
+
+public class BoardDeleteAction implements Action {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String num = request.getParameter("num");
+		
+		BoardDAO bd = BoardDAO.getInstance();
+		bd.deleteBoard(num);
+		
+		List<BoardVo> boardList =  bd.selectAllBoards();
+		request.setAttribute("boardList", boardList);
+		
+		RequestDispatcher disp = request.getRequestDispatcher("/board/boardList.jsp");
+	}
+
+}

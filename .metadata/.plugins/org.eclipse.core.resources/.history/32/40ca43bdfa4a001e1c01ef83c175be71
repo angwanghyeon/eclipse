@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+function loginCheck(){
+	if(document.frm.userid.value.length == 0){
+		alert("아이디를 반드시 입력하세요")
+		frm.userid.focus();
+		return false;
+	}else if(document.frm.pwd.value.length == 0){
+		alert("비밀번호를 반드시 입력하세요")
+		frm.pwd.focus();
+		return false;
+	}
+	return true;
+}
+
+function idCheck(){
+	if(document.joinfrm.userid.value.length == 0){
+		alert("아이디를 반드시 입력하세요")
+		joinfrm.userid.focus();
+		return;
+	}
+	
+	let url = "idcheck.do?userid=" + document.joinfrm.userid.value;
+	//조그만 창을 띄울 것임
+	window.open(url, "_brank" , "toolbar=no , menubar=0, scrollbars=yes, resizeable=no");
+	
+}
+
+function idOk(){
+	opener.frm.userid.value = document.frm.userid.value;
+	opener.frm.reid.value = document.frm.userid.value;
+	self.close();
+}
+

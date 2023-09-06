@@ -1,0 +1,16 @@
+package com.keduit;
+
+public class MemberBean {
+	private String name;
+	private String userid;
+	private String nickname;
+	private String pwd;
+	private String email;
+	private String phone;
+	private String name;
+	private String name;
+	private String name;
+	private String name;
+	private String name;
+	private String name;
+}

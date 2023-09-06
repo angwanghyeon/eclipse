@@ -1,0 +1,21 @@
+package ex01;
+
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
+public class SimpleClient {
+
+	public static void main(String[] args) {
+		// try with resource는 트라이문에 에러문을 소괄호 안에 다 사용함
+		try (Socket client = new Socket("localhost", 5000);
+			//클라이언트
+			 OutputStream os = client.getOutputStream();
+			 ObjectOutputStream oos = new ObjectOutputStream(os);
+		) {
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

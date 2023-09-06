@@ -1,0 +1,41 @@
+package com.keduit.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.keduit.dto.MemberVo;
+
+/**
+ * Servlet implementation class JoinServlet
+ */
+@WebServlet("/join.do")
+public class JoinServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher disp = request.getRequestDispatcher("member/join.jsp");
+		disp.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		MemberVo mv = new MemberVo();
+		mv.setName(request.getParameter("name"));
+		mv.setUserid(request.getParameter("userid"));
+		mv.setPwd(request.getParameter("pwd"));
+		mv.setEmail(request.getParameter("email"));
+		mv.setPhone(request.getParameter("phone"));
+		mv.setAdmin(Integer.parseInt(request.getParameter("admin")));
+		
+		RequestDispatcher disp = request.getRequestDispatcher("main.jsp");
+		disp.forward(request, response);
+	}
+
+}

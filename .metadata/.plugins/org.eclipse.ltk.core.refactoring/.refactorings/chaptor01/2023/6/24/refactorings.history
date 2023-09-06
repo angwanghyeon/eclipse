@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;practice.ex08.BufferedReader&apos; to &apos;BufferedReaderTest&apos;&#x0D;&#x0A;- Original project: &apos;chaptor01&apos;&#x0D;&#x0A;- Original element: &apos;practice.ex08.BufferedReader&apos;&#x0D;&#x0A;- Renamed element: &apos;practice.ex08.BufferedReaderTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BufferedReader&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;practice.ex08{BufferedReader.java[BufferedReader" matchStrategy="1" name="BufferedReaderTest" qualified="false" references="true" similarDeclarations="false" stamp="1686552929053" textual="false" version="1.0"/>
+</session>

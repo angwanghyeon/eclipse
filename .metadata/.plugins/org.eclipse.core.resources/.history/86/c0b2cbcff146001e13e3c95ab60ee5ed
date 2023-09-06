@@ -1,0 +1,10 @@
+package ex01;
+
+public class Echo2Server extends Thread{
+	//protected는 상속 받는 객체에서 사용 가능함
+	protected static boolean cont = true;
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,16 @@
+package ex01;
+
+import java.net.InetAddress;
+import java.util.Scanner;
+
+public class InetAddress01 {
+	public static void main(String[] args) {
+		InetAddress addr1 = null;
+		InetAddress addr2 = null;
+		System.out.print("호스트 이름을 입력하세요 : ");
+		Scanner in = new Scanner(System.in);
+		String url = in.nextLine();
+		
+		addr1 = InetAddress.getByName(url);
+	}
+}

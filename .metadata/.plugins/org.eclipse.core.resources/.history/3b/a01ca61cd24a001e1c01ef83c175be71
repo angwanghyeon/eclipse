@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+function loginCheck(){
+	if(document.frm.userid.value.length == 0){
+		
+	}
+}

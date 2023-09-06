@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:useBean id="memberB" class="com.keduit.MemberBean"></jsp:useBean>
+<jsp:setProperty property="*" name="memberB"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원정보</title>
+</head>
+<body>
+이름 : ${memberB.name} <br>
+아이디 : ${memberB.userid} <br>
+비밀번호 : ${memberB.pwd} <br>
+닉네임 : ${memberB.nickname} <br>
+</body>
+</html>

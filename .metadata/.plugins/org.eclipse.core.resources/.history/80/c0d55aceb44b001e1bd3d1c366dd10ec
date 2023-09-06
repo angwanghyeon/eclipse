@@ -1,0 +1,44 @@
+package com.keduit.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.keduit.dto.BoardVo;
+
+import util.DBManager;
+
+public class BoardDAO {
+	
+	//싱글톤으로 구현
+	private BoardDAO() {
+		
+	}
+	private static BoardDAO instance = new BoardDAO();
+	
+	public static BoardDAO getInstance() {
+		
+		return instance;
+	}
+	//여기까지가 싱글톤으로 구현
+	
+	public List<BoardVo> selectAllBoards() {
+		
+		List<BoardVo> list = new ArrayList<>();
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "select * from board order by num desc";
+		try {
+			conn = DBManager.getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+}

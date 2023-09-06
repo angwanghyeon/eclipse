@@ -1,0 +1,21 @@
+package ex01;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Echo1Client {
+	public static void main(String[] args) throws IOException {
+		Socket echo1 = null;
+		//문자열 단위의 printwriter
+		PrintWriter out = null; 
+		Scanner sc = new Scanner(System.in);
+		
+		echo1 = new Socket();
+		System.out.println("서버와 연결 시도중....");
+		echo1.connect(new InetSocketAddress("127.0.0.1", 5000), 3000);
+		
+	}
+}

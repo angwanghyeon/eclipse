@@ -1,0 +1,5 @@
+package com.keduit.controller.action;
+
+public interface Action {
+
+}

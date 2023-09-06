@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+
+ function check(){
+	 if(document.memberform.id.value = ""){
+		 alert("아이디를 입력해주세요");
+		 document.memberform.id.focus();
+		 return false;
+	 }else if(document.memberform.age.value = ""){
+		 alert("나이를 입력해주세요")
+	 }
+ }

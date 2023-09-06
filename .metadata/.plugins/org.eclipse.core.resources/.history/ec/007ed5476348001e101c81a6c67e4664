@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%= 
+if(session.getAttribute("loginUser") == null){
+	response.sendRedirect("01_loginForm.jsp");
+}else {
+	
+}
+%>
+<% request.getParameter("name") %> 님 환영합니다! 
+<br>
+저희 홈페이지를 방문해주셔서 감사합니다
+<button></button>
+</body>
+</html>

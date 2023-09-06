@@ -1,0 +1,42 @@
+package ex01;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Echo1Server {
+	public static void main(String[] args) throws IOException {
+		ServerSocket sv1 = null;
+		Socket connection = null;
+		BufferedReader in = null;
+		
+		try {
+			sv1 = new ServerSocket(5000);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("연결 대기중....");
+		
+		try {
+			connection = sv1.accept();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("메세지를 기다리는중....");
+		
+		try {
+			in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String msg;
+		while((msg = in.readLine()) != null) {
+			if(msg.contains("종료")) break;
+			System.out.println("읽은 메세지 : " + msg);
+		}
+		//와일문 종료되면 서버를 종료함
+		System.out.println();
+	}
+}

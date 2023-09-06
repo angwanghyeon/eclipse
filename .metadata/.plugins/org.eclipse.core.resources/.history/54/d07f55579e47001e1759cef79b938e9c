@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+function check_ok(){
+	if(document.reg_frm.pers_1.value.length != 6){
+		
+	}
+}

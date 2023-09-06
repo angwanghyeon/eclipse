@@ -1,0 +1,15 @@
+package ex01;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class SimpleServer {
+	
+	public static void main(String[] args) {
+		try {
+			ServerSocket sv1 = new ServerSocket(5000);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>회원 정보 수정</h3>
+	<form name="frm" id="reg_frm" method="post"
+		action="memberUpdate.do">
+		
+		<label for="name">이름</label><span style="color:red;" > * </span> 
+		<input type="text"
+			name="name" id="name"  required="required" value="${loginUser.name}"><br> 
+			
+		<label for="userid">아이디</label><span style="color:red;" >*</span> 
+		<input type="text" id="userid" name="userid" 
+		readonly="readonly" size="20" value="${loginUser.userid}"><br>
+			
+		<label for="pwd">비밀번호</label><span style="color:red;" > * </span> 
+		<input type="password" id="pwd" name="pwd" required="required" 
+		value="${loginUser.pwd}"><br>
+		
+		<label for="pwd_check">비밀번호 확인</label><span style="color:red;" > * </span> 
+		<input type="password" id="pwd_check" name="pwd_check" 
+		required="required" ><br>
+		
+		<label for="email">이메일</label><span style="color:red;" > * </span> 
+		<input type="email"
+			id="email" name="email" required="required"  value="${loginUser.email}"><br>
+			
+		<label for="phone">전화번호</label><span style="color:red;" > * </span> 
+		<input type="tel"
+			id="phone" name="phone" required="required" value="${loginUser.phone}" ><br>
+			
+		<label for="admin">등급</label><span style="color:red;" > * </span>
+		 <input type="radio"
+			name="admin"  value="0"  ${loginUser.admin == 0 ? "checked" : ""}>일반회원
+		<input type="radio"
+			name="admin"  value="1" checked="checked">관리자<br>
+		 
+		<input type="submit" value="회원정보수정" onclick="return updateCheck()">
+		<input type="button" value="취소" onclick="location.href='main.jsp'">
+	</form>
+	<hr>
+	<p>${message}</p>
+</body>
+</html>

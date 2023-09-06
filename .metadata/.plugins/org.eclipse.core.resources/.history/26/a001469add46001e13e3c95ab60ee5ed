@@ -1,0 +1,24 @@
+package ex01;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class SimpleServer {
+	
+	public static void main(String[] args) {
+		try {
+			//호스트 주소가 5천인 서버소켓 하나 만들기
+			ServerSocket sv1 = new ServerSocket(5000);
+			
+			//소켓 하나 만들기
+		 	Socket connection = sv1.accept();
+		 	
+		 	//소켓이 가진 인풋스트림이랑 연동
+		 	InputStream is = connection.getInputStream();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

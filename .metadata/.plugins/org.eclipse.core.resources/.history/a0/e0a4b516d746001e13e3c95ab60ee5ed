@@ -1,0 +1,7 @@
+package newnetwork;
+
+public class NewNetwork {
+	public static void main(String[] args) {
+		
+	}
+}

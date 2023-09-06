@@ -1,0 +1,20 @@
+package ex01;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Echo2Server extends Thread{
+	//protected는 상속 받는 객체에서 사용 가능함
+	protected static boolean cont = true;
+	//
+	protected Socket connection = null;
+	
+	public static void main(String[] args) throws IOException {
+		
+		ServerSocket sv1 = null;
+		//5000의 호스트
+		sv1 = new ServerSocket(5000);
+		System.out.println("서버 소켓 생성 중...");
+	}
+}

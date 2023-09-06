@@ -1,0 +1,4 @@
+insert into BOARD 
+values(board_seq.nextval, "1234", "홍길동", "hong@abc.com", 
+"게시글1번입니다.", "게시글 내용임",0, null);
+select * from BOARD;

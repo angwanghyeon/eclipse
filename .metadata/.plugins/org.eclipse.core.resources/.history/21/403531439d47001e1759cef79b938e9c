@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link href="./css/join.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./js/join.js"></script>
+</head>
+<body>
+	<form name="joinfrm" id="reg_frm" action="join">
+		<label for="name">이름</label><span> * </span>
+		<input type="text" id="name" value="민수킴"><br>
+		<label for="pers">주민등록번호</label><span> * </span>
+		<input type="text" name="pers_1" value="990612"> - 
+		<input type="text" name="pers_2" value="2021344"><br>
+		<label for="id">아이디</label><span> * </span>
+		<input type="text" name="id" value="msKim"><br>
+		<label for="pwd">비밀번호</label><span> * </span>
+		<input type="text" name="pwd" value="1234"><br>
+		<label for="pwd_ch">비밀번호 확인</label><span> * </span>
+		<input type="text" name="pwd" value="1234"><br>
+		
+		
+	</form>
+</body>
+</html>

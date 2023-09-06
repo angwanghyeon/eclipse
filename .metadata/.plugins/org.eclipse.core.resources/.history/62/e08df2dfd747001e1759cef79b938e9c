@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+session.setAttribute("s_name1", "세션에 저장된 첫번째 값이다.");
+session.setAttribute("s_name2", "세션에 저장된 두번째 값이다.");
+session.setAttribute("s_name3", "세션에 저장된 세번째 값이다.");
+session.setAttribute("s_name4", "세션에 저장된 네번째 값이다.");
+%>
+</body>
+</html>

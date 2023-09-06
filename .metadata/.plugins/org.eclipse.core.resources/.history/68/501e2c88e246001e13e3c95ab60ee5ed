@@ -1,0 +1,27 @@
+package ex01;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Echo1Server {
+	public static void main(String[] args) {
+		ServerSocket sv1 = null;
+		Socket connection = null;
+		BufferedReader in = null;
+		
+		try {
+			sv1 = new ServerSocket(5000);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("연결 대기중....");
+		
+		try {
+			connection = sv1.accept();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

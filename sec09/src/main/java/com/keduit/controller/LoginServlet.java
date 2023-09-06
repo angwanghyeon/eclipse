@@ -1,0 +1,60 @@
+package com.keduit.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.keduit.dao.MemberDAO;
+import com.keduit.dto.MemberVo;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/login.do")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//받은 값을 고대로 브라우저 주소에다가 넣기
+		RequestDispatcher disp = request.getRequestDispatcher("member/01_login.jsp");
+		disp.forward(request, response);
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String url = "member/01_login.jsp";
+		
+		String userid = request.getParameter("userid");
+		String pwd = request.getParameter("pwd");
+		
+		MemberDAO md = MemberDAO.getInstance();
+		
+		int result = md.userCheck(userid, pwd);
+		
+		if(result == 1) {
+			MemberVo mv = md.getMember(userid);
+			HttpSession session = request.getSession();
+			request.setAttribute("loginUser", mv);
+			request.setAttribute("message", "로그인이 완료되었습니다.");
+			url = "main.jsp";
+		}else if(result == 0) {
+			request.setAttribute("message", "비밀번호가 맞지 않습니다. 다시 확인해주세요");
+		}else if(result == -1) {
+			request.setAttribute("message", "아이디를 확인해주세요.");
+		}
+		
+		RequestDispatcher disp = request.getRequestDispatcher(url);
+		disp.forward(request, response);
+	}
+
+}

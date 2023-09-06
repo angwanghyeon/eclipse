@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시물 작성하기</title>
+</head>
+<body>
+	<div id="wrap" align="center">
+		<h2>게시물 작성하기</h2>
+		<form action="BoardServlet" name="frm" method="post">
+		<input type="hidden" name="command" value="board_write">
+			<table>
+				<tr>
+					<th>작성자</th>
+					<td><input type="text" name="name"> * 필수 </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
